@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>День святого Валентина</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            flex-direction: column;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease, transform 1s ease;
+            position: relative;
+        }
+        .show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        h1 {
+            color: #e6005c;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .heart {
+            color: #e6005c;
+            font-size: 4em;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.3); }
+        }
+        .button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            background-color: #e6005c;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="showCard()">💌 Открыть Валентинку 💌</button>
+    <div class="card" id="card">
+        <h1>С Днём расстрела Чикатило! 💖</h1>
+        <div class="heart">❤️</div>
+    </div>
+
+    <script>
+        function showCard() {
+            document.getElementById("card").classList.add("show");
+        }
+    </script>
+</body>
+</html>
